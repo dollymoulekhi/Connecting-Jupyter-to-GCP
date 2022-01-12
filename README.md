@@ -37,7 +37,7 @@ blob = Blob(name='file_location_withname', bucket=bucket)
 ```
 for i in range(0,1000):
     x= '000000000000'
-    x=x[:-(len(str(i)))
+    x=x[:-(len(str(i)))]
     x=x+(str(i))
     blob.download_to_filename('filename'+str(x)+'.csv')
     
