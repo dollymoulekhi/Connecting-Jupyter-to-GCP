@@ -29,10 +29,16 @@ bucket = Bucket(client=client, name='name of the bucket')
 
 blob = Blob(name='file_location_withname', bucket=bucket)
 
+```
+
+
+## For loop for getting multiple files while iterating
+
+```
 for i in range(0,1000):
     x= '000000000000'
     x=x[:-(len(str(i)))
     x=x+(str(i))
-    blob.download_to_filename('candidates_view/candidate_view'+str(x)+'.csv')
+    blob.download_to_filename('filename'+str(x)+'.csv')
     
 ```
