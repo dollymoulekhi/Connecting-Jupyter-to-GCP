@@ -1,25 +1,38 @@
 # Connecting-Jupyter-to-GCP
 
-`!pip install google`
+```
+!pip install google
 
-`!pip install google-cloud-storage`
+!pip install google-cloud-storage
+
+```
+
+```
+from google.cloud.storage.client import Client
+
+from google.cloud.storage.bucket import Bucket
+
+from google.cloud.storage.blob import Blob
+
+from google.oauth2.service_account import Credentials
+
+```
 
 
-
-`from google.cloud.storage.client import Client`
-
-`from google.cloud.storage.bucket import Bucket`
-
-`from google.cloud.storage.blob import Blob`
-
-`from google.oauth2.service_account import Credentials`
+```
+credentials = Credentials.from_service_account_file('projectcredentials.json')
 
 
-`credentials = Credentials.from_service_account_file('projectcredentials.json')`
+client = Client(project='project_name', credentials=credentials)
 
+bucket = Bucket(client=client, name='name of the bucket')
 
-`client = Client(project='project_name', credentials=credentials)`
+blob = Blob(name='file_location_withname', bucket=bucket)
 
-`bucket = Bucket(client=client, name='name of the bucket')`
-
-`blob = Blob(name='file_location_withname', bucket=bucket)`
+for i in range(0,1000):
+    x= '000000000000'
+    x=x[:-(len(str(i)))
+    x=x+(str(i))
+    blob.download_to_filename('candidates_view/candidate_view'+str(x)+'.csv')
+    
+```
