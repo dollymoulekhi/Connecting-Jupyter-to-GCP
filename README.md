@@ -1,4 +1,4 @@
-# Connecting-Jupyter-to-GCP
+# Connecting-Jupyter-to-GCS
 
 ```
 !pip install google
