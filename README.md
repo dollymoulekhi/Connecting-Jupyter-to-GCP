@@ -42,3 +42,15 @@ for i in range(0,1000):
     blob.download_to_filename('filename'+str(x)+'.csv')
     
 ```
+
+
+
+## After restarting the virtual machine how to run the notebook:
+
+```
+jupyter-lab --ip 0.0.0.0 --no-browser --allow-root
+
+ssh -i "location/file.pem" Ip address
+
+ngrok 8888
+```
